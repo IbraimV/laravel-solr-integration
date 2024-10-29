@@ -2,7 +2,6 @@
 
 namespace Ibraimv\SolrIntegration;
 
-use IbraimV\SolrIntegration\IbraımV\LaravelSolrItegration\SolrClient;
 use Illuminate\Support\ServiceProvider;
 
 class SolrServiceProvider extends ServiceProvider
