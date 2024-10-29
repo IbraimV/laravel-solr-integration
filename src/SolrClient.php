@@ -68,6 +68,15 @@ class SolrClient
 
 	public function deleteSingleDocument(string $value, string $field = 'id'): array
 	{
+		$response = $this->search('*:*', [
+			'fq' => "{$field}:{$value}",
+			'rows' => 2
+		]);
+	
+		if (isset($response['response']['numFound']) && $response['response']['numFound'] > 1) {
+			throw new \InvalidArgumentException("The value provided for {$field} is not unique. Multiple documents match this value.");
+		}
+		
 		$deletePayload = ['delete' => [$field => $value]];
 		return $this->makePostRequest('/update', $deletePayload, ['commit' => 'true']);
 	}
