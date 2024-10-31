@@ -9,7 +9,7 @@ This package provides an easy-to-use Solr client for Laravel, allowing you to in
 Install via Composer:
 
 ```bash
-composer require ibraimv/solr-integration
+composer require ibraimv/laravel-solr-integration
 ```
 
 ### Step 2: Publish Configuration
