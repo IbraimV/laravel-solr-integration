@@ -3,6 +3,7 @@
 namespace Ibraimv\SolrIntegration;
 
 use Illuminate\Support\ServiceProvider;
+use Ibraimv\SolrIntegration\SolrClient;
 
 class SolrServiceProvider extends ServiceProvider
 {
@@ -12,6 +13,10 @@ class SolrServiceProvider extends ServiceProvider
             __DIR__ . '/config/solr.php',
             'solr'
         );
+
+		$this->app->singleton(SolrClient::class, function ($app) {
+            return new SolrClient(null, $app['config']['solr']);
+        });
 	}
 
 	public function boot()
