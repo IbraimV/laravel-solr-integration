@@ -15,7 +15,7 @@ class SolrServiceProvider extends ServiceProvider
         );
 
 		$this->app->singleton(SolrClient::class, function ($app) {
-            return new SolrClient(null, $app['config']['solr']);
+            return new SolrClient(null, $app['config']->get('solr'));
         });
 	}
 
