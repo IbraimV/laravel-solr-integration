@@ -8,6 +8,6 @@ class Solr extends Facade
 {
 	protected static function getFacadeAccessor()
 	{
-		return \IbraimV\SolrIntegration\SolrClient::class;
+		return \Ibraimv\SolrIntegration\SolrClient::class;
 	}
 }
