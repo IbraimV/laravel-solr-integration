@@ -10,13 +10,59 @@ class SolrClient
 	protected $client;
 	protected $baseUri;
 	protected $validParams = [
-		'q', 'fq', 'sort', 'rows', 'start', 'fl',
-		'defType', 'q.op', 'debugQuery', 'wt', 'facet',
-		'spellcheck', 'dismax', 'boost', 'group',
-		'hl', 'spatial', 'stats', 'terms', 'timeAllowed',
-		'cursorMark'
-	];
-
+        // Basic Query Parameters
+        'q', 'fq', 'start', 'rows', 'sort', 'fl', 'defType', 'q.op',
+        
+        // Faceting Parameters
+        'facet', 'facet.field', 'facet.query', 'facet.range', 'facet.limit', 
+        'facet.sort', 'facet.mincount', 'facet.pivot', 'facet.pivot.mincount',
+        
+        // Highlighting Parameters
+        'hl', 'hl.fl', 'hl.simple.pre', 'hl.simple.post', 'hl.fragsize', 'hl.snippets',
+        
+        // Spellcheck Parameters
+        'spellcheck', 'spellcheck.q', 'spellcheck.build', 'spellcheck.collate', 'spellcheck.count',
+        
+        // Grouping Parameters
+        'group', 'group.field', 'group.ngroups', 'group.limit',
+        
+        // Sorting and Relevance
+        'boost', 'boost.func', 'bq', 'tie',
+        
+        // Geospatial Search
+        'spatial', 'pt', 'sfield', 'd',
+        
+        // Statistical Faceting
+        'stats', 'stats.field',
+        
+        // Real-Time Get
+        'ids', 'rt',
+        
+        // Distributed Search
+        'shards', 'shards.qt',
+        
+        // Streaming Expression
+        'expr',
+        
+        // CursorMark for Pagination
+        'cursorMark',
+        
+        // Time and Performance
+        'timeAllowed', 'debugQuery',
+        
+        // Terms Component
+        'terms', 'terms.fl', 'terms.limit', 'terms.sort',
+        
+        // JSON Facet API
+        'json.facet',
+        
+        // Miscellaneous
+        'wt', 'omitHeader', 'echoParams', 'debug.explain.structured',
+        
+        // Update Request
+        'commit', 'commitWithin', 'softCommit'
+    ];
+	
 	protected $defaultCollection;
 
 	protected $defaultParams;
